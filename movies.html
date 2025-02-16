@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фільми - CinemaWorld</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script type = "module">
+        import http from 'http';
+        const http = require('https');
+    
+    const options = {
+      method: 'GET',
+      hostname: 'api.themoviedb.org',
+      port: null,
+      path: '/3/authentication',
+      headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZjIyNmY4NzRhMTk5NmRiOTA0YTQwM2ZhM2VjYTdkZiIsIm5iZiI6MTczNTQ2ODg3MS45MDksInN1YiI6IjY3NzEyNzQ3MWYyYzVkOTMwMTkyOTQ3MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ULcrv4hP8NU3NVmM4H6mfGOUKTDQtKUnm979SXFoYAE'
+      }
+    };
+    
+    const req = http.request(options, function (res) {
+      const chunks = [];
+    
+      res.on('data', function (chunk) {
+        chunks.push(chunk);
+      });
+    
+      res.on('end', function () {
+        const body = Buffer.concat(chunks);
+        console.log(body.toString());
+      });
+    });
+    
+    req.end();
+    
+        </script>
+    <header>
+        <nav class="navbar">
+            <div class="logo">CinemaWorld</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="movies.html" class="active">Фільми</a></li>
+                <li><a href="schedule.html">Розклад</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+                <li><a href="about.html">Про нас</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Пошук фільмів..." id="searchInput">
+                <button class="search-button" id="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="movies-page">
+        <section class="movies-header">
+            <h1>Фільми у прокаті</h1>
+            <div class="filters">
+                <button class="filter-btn active">Усі фільми</button>
+                <button class="filter-btn">Прем'єри</button>
+                <button class="filter-btn">Скоро у прокаті</button>
+            </div>
+        </section>
+
+        <section class="now-showing">
+            <div class="container">
+                <h2>Афіша</h2>
+                <div class="movies-grid">
+                    <div class="movie-card">
+                        <span class="age-rating">16+</span>
+                        <img src="Gladiator2-poster2-vend.jpg" alt="Movie 1">
+                        <h3>Гладіатор II</h3>
+                        <p>епічна історія, екшн, пригоди, драма</p>
+                        <button class="details-button">Детальніше</button>
+                    </div>
+                    <div class="movie-card">
+                        <span class="age-rating">0+</span>
+                        <img src="moana2-vend2.jpg" alt="Movie 2">
+                        <h3>Ваяна 2</h3>
+                        <p>анімація, пригоди, сімейний</p>
+                        <button class="details-button">Детальніше</button>
+                    </div>
+                    <div class="movie-card">
+                        <span class="age-rating">16+</span>
+                        <img src="jfd-vend4.jpg" alt="Movie 3">
+                        <h3>Джокер: Божевілля на двох</h3>
+                        <p>кримінал, драма, трилер, мюзикл, DC</p>
+                        <button class="details-button">Детальніше</button>
+                    </div>
+                    <div class="movie-card">
+                        <span class="age-rating">0+</span>
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 4">
+                        <h3>пусто</h3>
+                        <p>пусто</p>
+                        <button class="details-button">Детальніше</button>
+                    </div>
+                    <div class="movie-card">
+                        <span class="age-rating">0+</span>
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 5">
+                        <h3>пусто</h3>
+                        <p>пусто</p>
+                        <button class="details-button">Детальніше</button>
+                    </div>
+                    <div class="movie-card">
+                        <span class="age-rating">0+</span>
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 6">
+                        <h3>пусто</h3>
+                        <p>пусто</p>
+                        <button class="details-button">Детальніше</button>
+                    </div>
+                    <div class="movie-card">
+                        <span class="age-rating">0+</span>
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 7">
+                        <h3>пусто</h3>
+                        <p>пусто</p>
+                        <button class="details-button">Детальніше</button>
+                    </div>
+                    <div class="movie-card">
+                        <span class="age-rating">0+</span>
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 8">
+                        <h3>пусто</h3>
+                        <p>пусто</p>
+                        <button class="details-button">Детальніше</button>
+                    </div>
+                    <div class="movie-card">
+                        <span class="age-rating">0+</span>
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 9">
+                        <h3>пусто</h3>
+                        <p>пусто</p>
+                        <button class="details-button">Детальніше</button>
+                    </div>
+                    <div class="movie-card">
+                        <span class="age-rating">0+</span>
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 10">
+                        <h3>пусто</h3>
+                        <p>пусто</p>
+                        <button class="details-button">Детальніше</button>
+                    </div>
+                    <div class="movie-card">
+                        <span class="age-rating">0+</span>
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 11">
+                        <h3>пусто</h3>
+                        <p>пусто</p>
+                        <button class="details-button">Детальніше</button>
+                    </div>
+                    <div class="movie-card">
+                        <span class="age-rating">0+</span>
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 12">
+                        <h3>пусто</h3>
+                        <p>пусто</p>
+                        <button class="details-button">Детальніше</button>
+                    </div>
+                </div>
+
+                <div class="movies-grid second-row">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Про нас</h3>
+                <p>CinemaWorld - ваш надійний провідник у світ кіно. Ми пропонуємо найкращі фільми та незабутні враження.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакти</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +380 (99) 999 99 99</li>
+                    <li><i class="fas fa-envelope"></i> info@cinemaworld.ua</li>
+                    <li><i class="fas fa-map-marker-alt"></i> вул. Київська 123, Київ</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Швидка навігація</h3>
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="movies.html">Фільми</a></li>
+                    <li><a href="#">Розклад сеансів</a></li>
+                    <li><a href="#">Акції</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Соціальні мережі</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CinemaWorld. Всі права захищені.</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/7a8bff7a1a.js" crossorigin="anonymous"></script>
+</body>
+</html>
