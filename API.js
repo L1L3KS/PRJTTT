@@ -78,3 +78,5 @@ form.addEventListener("submit", (e) => {
         search.value = '';  // Clear the search input
     }
 });
+
+document.querySelector('.details-button').style.display = 'none';
